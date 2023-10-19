@@ -18,22 +18,21 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member):
-        embed = discord.Embed(title='환영합니다, 저는 그냥 설녀입니다~\r\n제작자: 단덕래',
+    embed = discord.Embed(title='환영합니다, 저는 그냥 설녀입니다~\r\n제작자: 단덕래',
                           description='명령어 목록은 언제든지 !명령어 를 이용하여 확인하실 수 있습니다.',
                           colour=800000)
-        embed.set_thumbnail(url='https://www.pojo.com/wp-content/uploads/2022/05/Tri-Brigade-Mercourier.jpg')
-        embed.set_footer(text='다음에 또 봐요~')
-        await member.send(embed=embed)
-        channel = bot.get_channel()
-        await channel.send("<@{}>님이 서버에 들어오셨어요. 환영합니다~".format(str(member.id)))
-#bot.get_channel()<--채널아이디
+    embed.set_thumbnail(url='https://www.pojo.com/wp-content/uploads/2022/05/Tri-Brigade-Mercourier.jpg')
+    embed.set_footer(text='다음에 또 봐요~')
+    await member.send(embed=embed)
+    channel = bot.get_channel()
+    await channel.send("<@{}>님이 서버에 들어오셨어요. 환영합니다~".format(str(member.id)))
+
 
 @bot.event
 async def on_member_remove(member):
     channel = bot.get_channel()
     await channel.send("<@{}>님이 나가셨습니다... 언젠가 다시 만날 수 있으려나요? 키킼".format(str(member.id)))
-#bot.get_channel()<--채널아이디
-
+#겟 채널 오른쪽 괄호에 채널아이디 붙여넣기.
 
 @bot.command()
 async def 명령어(ctx):
@@ -43,7 +42,7 @@ async def 명령어(ctx):
     embed.set_thumbnail(url='https://i.postimg.cc/QC7bmV5B/yuki-onna-the-ice-mayakashi-by-726312107-dd5fd22222-fullview.jpg')
     embed.add_field(name='!(카드이름)',value='해당카드의 발매명, 별명,\r\nㅤ▶빈칸/기호없이◀', inline=True)
     embed.add_field(name='!테마',value='해당테마의\r\n공식이름\r\n별칭', inline=True)
-    embed.add_field(name='유틸리티',value='!주사위\r\n!홀짝\r\n!가위바위보', inline=True)
+    embed.add_field(name='유틸리티',value='!주사위\r\n!홀짝\r\n!가위바위보\r\n!투표\r\n!요일투표\r\n!모집', inline=True)
     embed.add_field(name='이모지',value='!이모지 명령어로 확인가능', inline=True)
     embed.set_footer(text='명령어는 언제든지 명령어를 통해서 확인하실 수 있습니다~')
     embed.set_footer(text='도움이 되셨다면 다행이네요~ 이 창은 2분 뒤에 삭제됩니다~ 펑~')
@@ -225,7 +224,7 @@ async def 모집(ctx):
 async def 테마(ctx):
     embed = discord.Embed(title='등록된 테마 이름입니다.',
                           colour=0xE67E22)
-    embed.add_field(name='아래와 같습니다.', value='트라이브리게이드\r\n트브게\r\nㅤ\r\n트라게\r\nㅤ\r\n섬도희\r\n섬도\r\nㅤ\r\n상검\r\nㅤ\r\n루닉\r\nㅤ\r\n미캉코\r\nㅤ\r\n캉코\r\nㅤ\r\nTG\r\nㅤ\r\n테크지너스\r\nㅤ\r\n티지\r\nㅤ\r\n티쥐\r\nㅤ\r\ntg\r\nㅤ\r\n엑소시스터\r\nㅤ\r\n엑소\r\nㅤ\r\n샐러맨그레이트\r\nㅤ\r\n샐그\r\nㅤ\r\n샐러맨\r\nㅤ\r\n')
+    embed.add_field(name='아래와 같습니다.', value='트라이브리게이드\r\n트브게\r\nㅤ\r\n트라게\r\nㅤ\r\n섬도희\r\n섬도\r\nㅤ\r\n상검\r\nㅤ\r\n루닉\r\nㅤ\r\n미캉코\r\n캉코\r\nㅤ\r\nTG\r\n테크지너스\r\n티지\r\n티쥐\r\ntg\r\nㅤ\r\n엑소시스터\r\n엑소\r\nㅤ\r\n샐러맨그레이트\r\n샐그\r\n샐러맨')
     embed.set_footer(text='원하는 카드를 찾으시길..')
     dm_channel = await ctx.author.create_dm()
     await dm_channel.send(embed=embed, delete_after=60 * 5 * 2)
@@ -1472,7 +1471,7 @@ async def 억념의상검(ctx):
 @bot.command()
 async def 순백의성녀에클레시아(ctx):
     dm_channel = await ctx.author.create_dm()
-    await dm_channel.send('https://ygoprodeck.com/cdn-cgi/image/format=auto,width=313/https://images.ygoprodeck.com/images/cards/55273560 * 5.jpg', delete_after=60 * 5)
+    await dm_channel.send('https://i.postimg.cc/TYyykVFG/chrome-9-Xzi-VOp-Yfk.png', delete_after=60 * 5)
     embed = discord.Embed(colour=0xC27C0E)
     embed.add_field(name='마법사족 / 튜너 / 효과', value='이 카드명의, ①의 방법에 의한 특수 소환은 1턴에 1번밖에 할 수 없으며, ②③의 효과는 각각 1턴에 1번밖에 사용할 수 없다.\r\n①: 상대 필드의 몬스터의 수가 자신 필드의 몬스터보다 많을 경우, 이 카드는 패에서 특수 소환할 수 있다.\r\n②: 자신 / 상대의 메인 페이즈에, 이 카드를 릴리스하고 발동할 수 있다. 패 / 덱에서 "상검" 몬스터 또는 "알버스의 낙윤" 1장을 특수 소환한다.\r\n③: 이 턴에 융합 몬스터가 자신 묘지로 보내지고 있을 경우, 엔드 페이즈에 발동할 수 있다. 묘지의 이 카드를 패에 넣는다.', inline=True)
     dm_channel = await ctx.author.create_dm()
@@ -1483,7 +1482,7 @@ async def 순백의성녀에클레시아(ctx):
 @bot.command()
 async def 순백(ctx):
     dm_channel = await ctx.author.create_dm()
-    await dm_channel.send('https://ygoprodeck.com/cdn-cgi/image/format=auto,width=313/https://images.ygoprodeck.com/images/cards/55273560 * 5.jpg', delete_after=60 * 5)
+    await dm_channel.send('https://i.postimg.cc/TYyykVFG/chrome-9-Xzi-VOp-Yfk.png', delete_after=60 * 5)
     embed = discord.Embed(colour=0xC27C0E)
     embed.add_field(name='마법사족 / 튜너 / 효과', value='이 카드명의, ①의 방법에 의한 특수 소환은 1턴에 1번밖에 할 수 없으며, ②③의 효과는 각각 1턴에 1번밖에 사용할 수 없다.\r\n①: 상대 필드의 몬스터의 수가 자신 필드의 몬스터보다 많을 경우, 이 카드는 패에서 특수 소환할 수 있다.\r\n②: 자신 / 상대의 메인 페이즈에, 이 카드를 릴리스하고 발동할 수 있다. 패 / 덱에서 "상검" 몬스터 또는 "알버스의 낙윤" 1장을 특수 소환한다.\r\n③: 이 턴에 융합 몬스터가 자신 묘지로 보내지고 있을 경우, 엔드 페이즈에 발동할 수 있다. 묘지의 이 카드를 패에 넣는다.', inline=True)
     dm_channel = await ctx.author.create_dm()
